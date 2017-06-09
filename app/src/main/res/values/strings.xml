@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ServiceBuddy</string>
+    <string name="action_settings">Settings</string>
+    <string name="machine_name_add_prompt">Machine name</string>
+    <string name="prod_year_prompt" > Production year</string>
+    <string name="odometer_prompt">Odometer</string>
+    <string name="machine_make_prompt">Make</string>
+    <string name="machine_model_prompt">Model</string>
+    <string name="add_photo_prompt">Add photo</string>
+</resources>
