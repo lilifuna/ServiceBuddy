@@ -7,4 +7,9 @@
     <string name="machine_make_prompt">Make</string>
     <string name="machine_model_prompt">Model</string>
     <string name="add_photo_prompt">Add photo</string>
+    <string name="engine_oil_filter">Engine oil filter</string>
+    <string name="engine_oil">Engine oil</string>
+    <string name="transmission_oil">Transmission oil</string>
+    <string name="transmission_oil_filter">Transmission oil filter</string>
+    <string name="air_filter">Air filter</string>
 </resources>

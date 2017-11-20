@@ -1,5 +1,10 @@
 package com.example.adam.servicebuddy.models;
 
+import android.app.Application;
+import android.content.Context;
+
+import com.example.adam.servicebuddy.R;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,34 +15,13 @@ import java.util.List;
 
 public class MachineService {
 
-    public enum component{
-        ENGINE_OIL_FILTER,
-        ENGINE_OIL,
-        TRANSMISSION_OIL,
-        TRANSMISSION_OIL_FILTER,
-        AIR_FILTER,
-        CAB_AIR_FILTER,
-        COOLANT,
-        FUEL_FILTER,
-        HYDRAULIC_OIL_FILTER,
-        HYDRAULIC_OIL,
-        WIPER_BLADES,
-        DEF_FILTER,
-        TIRES_FRONT,
-        TIRES_REAR,
-        DIFFERENTIAL_OIL_FRONT,
-        DIFFERENTIAL_OIL_REAR,
-        TRANSFER_CASE_OIL_FRONT,
-        TRANSFER_CASE_OIL_REAR,
-        GREASE
-    }
+
 
 
     Date date;
-
-    List<component> componentsServiced = new ArrayList<>();
+    List<Machine.component> componentsServiced = new ArrayList<>();
 
     public MachineService(){
-        componentsServiced.add(component.ENGINE_OIL);
+
     }
 }

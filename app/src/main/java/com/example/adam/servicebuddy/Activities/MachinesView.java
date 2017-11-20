@@ -1,4 +1,4 @@
-package com.example.adam.servicebuddy.Controllers;
+package com.example.adam.servicebuddy.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.adam.servicebuddy.AppSingleton;
 import com.example.adam.servicebuddy.R;
 
 public class MachinesView extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class MachinesView extends AppCompatActivity {
         setContentView(R.layout.activity_machines_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        AppSingleton.getInstance().initialize(getApplicationContext());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -27,6 +29,8 @@ public class MachinesView extends AppCompatActivity {
                 startActivity(new Intent(MachinesView.this, AddMachine.class));
             }
         });
+
+
     }
 
     @Override
@@ -50,4 +54,5 @@ public class MachinesView extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

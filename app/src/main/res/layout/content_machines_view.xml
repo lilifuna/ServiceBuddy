@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.adam.servicebuddy.Controllers.MachinesView"
+    tools:context="com.example.adam.servicebuddy.Activities.MachinesView"
     tools:showIn="@layout/activity_machines_view">
 
 
     <ListView
+        android:id="@+id/machinesList"
         android:layout_width="371dp"
         android:layout_height="494dp"
         app:layout_constraintTop_toTopOf="parent"
