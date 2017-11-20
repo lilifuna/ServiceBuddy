@@ -1,7 +1,9 @@
-package com.example.adam.servicebuddy;
+package com.example.adam.servicebuddy.entities;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+
+import com.example.adam.servicebuddy.Machine;
 
 import java.util.Date;
 
@@ -10,7 +12,7 @@ import java.util.Date;
  */
 
 @Entity (tableName = "machines")
-public class MachineEntity implements Machine{
+public class MachineEntity implements Machine {
 
     @PrimaryKey int id;
     String name;

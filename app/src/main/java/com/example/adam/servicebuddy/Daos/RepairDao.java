@@ -1,7 +1,9 @@
-package com.example.adam.servicebuddy;
+package com.example.adam.servicebuddy.Daos;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Query;
+
+import com.example.adam.servicebuddy.Repair;
 
 import java.util.List;
 

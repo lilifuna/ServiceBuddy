@@ -1,4 +1,4 @@
-package com.example.adam.servicebuddy;
+package com.example.adam.servicebuddy.Daos;
 
 import android.arch.persistence.room.Dao;
 
@@ -8,4 +8,7 @@ import android.arch.persistence.room.Dao;
 
 @Dao
 public class PointServicedDao {
+
+
+
 }

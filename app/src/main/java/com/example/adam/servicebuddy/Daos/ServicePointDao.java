@@ -1,4 +1,4 @@
-package com.example.adam.servicebuddy;
+package com.example.adam.servicebuddy.Daos;
 
 import android.arch.persistence.room.Dao;
 

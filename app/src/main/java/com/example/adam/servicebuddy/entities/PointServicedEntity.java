@@ -1,7 +1,10 @@
-package com.example.adam.servicebuddy;
+package com.example.adam.servicebuddy.entities;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+
+import com.example.adam.servicebuddy.PointServiced;
+import com.example.adam.servicebuddy.ServicePoint;
 
 /**
  * Created by Adam on 2017-11-20.
@@ -13,7 +16,7 @@ import android.arch.persistence.room.ForeignKey;
                                     parentColumns = "pointID",
                                     childColumns = "servicePointID"))
 
-public class PointServicedEntity implements PointServiced{
+public class PointServicedEntity implements PointServiced {
 
     int serviceID;
     int servicePointID;
