@@ -24,7 +24,9 @@ public class AppSingleton  {
     }
 
     private static synchronized AppSingleton getSync() {
-        if (mInstance == null) mInstance = new AppSingleton();
+        if (mInstance == null){
+            mInstance = new AppSingleton();
+        }
         return mInstance;
     }
 
