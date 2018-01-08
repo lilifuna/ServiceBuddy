@@ -2,6 +2,7 @@ package com.example.adam.servicebuddy.entities;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverter;
 
 import com.example.adam.servicebuddy.Repair;
 
@@ -15,10 +16,10 @@ import java.util.Date;
 @Entity (tableName = "repairs")
 public class RepairEntity implements Repair {
 
-    @PrimaryKey  int id;
-    int operatorId;
-    int machineID;
-    Date repairDate;
+    @PrimaryKey public  int id;
+    public int operatorId;
+    public int machineID;
+    public Date repairDate;
 
 
     @Override
@@ -39,4 +40,9 @@ public class RepairEntity implements Repair {
     public Date getRepairDate(){
         return repairDate;
     }
+
+
+
+
+
 }

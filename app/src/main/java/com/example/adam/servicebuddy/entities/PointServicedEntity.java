@@ -12,13 +12,12 @@ import com.example.adam.servicebuddy.ServicePoint;
 
 @Entity(tableName = "pointServiced",
         primaryKeys = {"serviceID", "servicePointID"},
-        foreignKeys = @ForeignKey(entity = ServicePoint.class,
-                                    parentColumns = "pointID",
+        foreignKeys = @ForeignKey(entity = ServicePointEntity.class,
+                                    parentColumns = "pointId",
                                     childColumns = "servicePointID"))
-
 public class PointServicedEntity implements PointServiced {
 
-    int serviceID;
-    int servicePointID;
+    public int serviceID;
+    public int servicePointID;
 
 }

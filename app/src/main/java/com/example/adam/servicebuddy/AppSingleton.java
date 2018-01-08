@@ -17,6 +17,7 @@ public class AppSingleton  {
     private static AppSingleton mInstance;
     public static Cloudinary cloud;
 
+
     public static AppSingleton getInstance(){
         if (mInstance == null) mInstance = getSync();
         return mInstance;

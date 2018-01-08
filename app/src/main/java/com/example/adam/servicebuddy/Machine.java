@@ -8,7 +8,7 @@ import java.util.Date;
 
 public interface Machine {
 
-    public int getId();
+    public String getId();
     public String getName();
     public void setName(String name);
     public String getMake();

@@ -4,6 +4,7 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Query;
 
 import com.example.adam.servicebuddy.Repair;
+import com.example.adam.servicebuddy.entities.RepairEntity;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
 public interface RepairDao {
 
     @Query("SELECT * FROM repairs WHERE machineID = :machineId")
-    List<Repair> getAllMachineRepairs(int machineId);
+    List<RepairEntity> getAllMachineRepairs(int machineId);
 
 
 }

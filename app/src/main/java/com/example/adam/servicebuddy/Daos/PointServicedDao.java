@@ -7,7 +7,7 @@ import android.arch.persistence.room.Dao;
  */
 
 @Dao
-public class PointServicedDao {
+public interface PointServicedDao {
 
 
 

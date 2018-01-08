@@ -13,15 +13,15 @@ import com.example.adam.servicebuddy.ServicePoint;
 
 
 @Entity(tableName = "servicePoints"
-        ,foreignKeys = @ForeignKey(entity = Machine.class,
+        ,foreignKeys = @ForeignKey(entity = MachineEntity.class,
                                     parentColumns = "id",
                                     childColumns = "machineID"))
 
 public class ServicePointEntity implements ServicePoint {
 
-    @PrimaryKey  int pointId;
-    String name;
-    int machineID;
+    @PrimaryKey  public int pointId;
+    public String name;
+    public int machineID;
 
     public void setName(String name) {
         this.name = name;
