@@ -14,13 +14,13 @@ import java.util.Date;
 @Entity (tableName = "machines")
 public class MachineEntity implements Machine {
 
-    @PrimaryKey public  String id;
+    @PrimaryKey(autoGenerate = true) public int id;
     public String name;
     public String make;
     public int productionDate;
 
 
-    public MachineEntity(String id, String name, String make, int productionDate){
+    public MachineEntity(int id, String name, String make, int productionDate){
         this.id = id;
         this.name = name;
         this.make = make;
@@ -39,7 +39,7 @@ public class MachineEntity implements Machine {
 
 
     @Override
-    public String getId(){
+    public int getId(){
         return id;
     }
 

@@ -6,6 +6,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
+import com.example.adam.servicebuddy.Machine;
 import com.example.adam.servicebuddy.ServicePoint;
 import com.example.adam.servicebuddy.entities.MachineEntity;
 
@@ -20,10 +21,13 @@ public interface MachineDao {
 
 
     @Query("SELECT * FROM machines")
-    LiveData<List<MachineEntity>> getAllMachines();
+    List<MachineEntity> getAllMachines();
 
     @Query("SELECT * FROM machines WHERE name = :machineName")
-    LiveData<List<MachineEntity>> getAllMachinesByName(String machineName);
+    List<MachineEntity> getAllMachinesByName(String machineName);
+
+    @Query("SELECT * FROM machines WHERE :mId = id")
+    MachineEntity getMachineById(int mId);
 
   /*  @Query("SELECT servicePoints.name FROM servicePoints " +
             "JOIN machines ON machines.id = servicePoints.machineID")

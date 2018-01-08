@@ -25,12 +25,11 @@
         <activity android:name=".Activities.AddMachine" />
         <activity
             android:name=".Activities.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
         <activity android:name=".Activities.NewUserActivity" />
         <activity
             android:name=".Activities.UserListActivity"
-            android:label="Users list">
-        </activity>
+            android:label="Users list"></activity>
         <activity
             android:name=".Activities.MenuActivity"
             android:label="@string/title_activity_menu"
@@ -41,6 +40,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activities.MachineDetails"></activity>
     </application>
 
 </manifest>

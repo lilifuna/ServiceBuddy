@@ -16,6 +16,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Adam on 2017-06-10.
@@ -24,13 +25,11 @@ import java.util.HashMap;
 public class MachineAdapter extends BaseAdapter {
 
     Context context;
-    ArrayList<String> photosUrls;
-    ArrayList<String> names;
+    List<Machine> machines;
 
 
-    public MachineAdapter(ArrayList<String> photosUrls, ArrayList<String> names, Context context){
-        this.photosUrls = photosUrls;
-        this.names = names;
+    public MachineAdapter(List<Machine> machines, Context context){
+        this.machines = machines;
         this.context = context;
 
     }
@@ -38,7 +37,7 @@ public class MachineAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return machines.size();
     }
 
     @Override
@@ -48,7 +47,7 @@ public class MachineAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return  machines.get(position).getId();
     }
 
     @Override
@@ -58,8 +57,8 @@ public class MachineAdapter extends BaseAdapter {
         View rowView = inflater.inflate(R.layout.machine_list_row, parent, false);
         TextView textView = (TextView) rowView.findViewById(R.id.machine_name);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.list_row_machine_photo);
-        textView.setText(names.get(position));
-        Picasso.with(context).load(photosUrls.get(position)).into(imageView);
+        textView.setText(machines.get(position).getName());
+        Picasso.with(context).load("https://st.mascus.com/imagetilewm/product/dd8a7989/manitou-mlt-627-t-turbo-4x4x4,3e1164d1.jpg").into(imageView);
 
         return rowView;
     }

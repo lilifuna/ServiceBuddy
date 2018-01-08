@@ -8,11 +8,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 import com.example.adam.servicebuddy.AppSingleton;
 import com.example.adam.servicebuddy.R;
 
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnItemClick;
+
 public class MachinesView extends AppCompatActivity {
+
+    @BindView(R.id.machinesList) ListView machinesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +29,7 @@ public class MachinesView extends AppCompatActivity {
         setContentView(R.layout.activity_machines_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        ButterKnife.bind(this);
         AppSingleton.getInstance(getApplicationContext()).initialize(getApplicationContext());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -31,6 +41,12 @@ public class MachinesView extends AppCompatActivity {
         });
 
 
+    }
+
+    @OnItemClick(R.id.machinesList)
+    void onItemClick(int position){
+        Intent intent = new Intent(MachinesView.this, MachineDetails.class);
+        intent.putExtra("machineID", machinesList.getItemIdAtPosition(position));
     }
 
     @Override
