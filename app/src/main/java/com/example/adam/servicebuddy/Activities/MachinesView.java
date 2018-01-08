@@ -20,7 +20,7 @@ public class MachinesView extends AppCompatActivity {
         setContentView(R.layout.activity_machines_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        AppSingleton.getInstance().initialize(getApplicationContext());
+        AppSingleton.getInstance(getApplicationContext()).initialize(getApplicationContext());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

@@ -19,7 +19,7 @@ public class MachineService {
 
 
     Date date;
-    List<Machine.component> componentsServiced = new ArrayList<>();
+    //List<Machine.component> componentsServiced = new ArrayList<>();
 
     public MachineService(){
 

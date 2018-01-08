@@ -28,4 +28,6 @@
     </string>
     <string name="loginOrRegister">Log in or register</string>
     <string name="login">Login</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="unregistered">You have to be logged in to access this section</string>
 </resources>

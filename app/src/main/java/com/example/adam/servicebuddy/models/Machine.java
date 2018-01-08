@@ -26,16 +26,16 @@ public class Machine {
     String productionYear;
     Map<Date, Integer> odometerReadings;
     Image mainPhoto;
-    static Context context = AppSingleton.getInstance().getAppContext();
 
 
+/*
     public enum component {
-        ENGINE_OIL_FILTER(context.getString(R.string.engine_oil_filter)),
-        ENGINE_OIL(context.getString(R.string.engine_oil)),
-        TRANSMISSION_OIL(context.getString(R.string.transmission_oil)),
-        TRANSMISSION_OIL_FILTER(context.getString(R.string.transmission_oil_filter)),
-        AIR_FILTER(context.getString(R.string.air_filter));
-     /*   CAB_AIR_FILTER,
+        ENGINE_OIL_FILTER,
+        ENGINE_OIL,
+        TRANSMISSION_OIL,
+        TRANSMISSION_OIL_FILTER,
+        AIR_FILTER;
+        CAB_AIR_FILTER,
         COOLANT,
         FUEL_FILTER,
         HYDRAULIC_OIL_FILTER,
@@ -49,17 +49,17 @@ public class Machine {
         TRANSFER_CASE_OIL_FRONT,
         TRANSFER_CASE_OIL_REAR,
         GREASE;
-*/
+
 
         private String name;
 
         component(String text){
-            name = text;
+            //name = text;
         }
         public String getText(){
             return this.name;
         }
-    }
+    }*/
 
     public Machine(){
         odometerReadings = new HashMap<Date, Integer>();

@@ -1,9 +1,12 @@
 package com.example.adam.servicebuddy.Activities;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.adam.servicebuddy.AppDatabase;
 import com.example.adam.servicebuddy.AppSingleton;
@@ -44,24 +47,29 @@ public class LoginActivity extends AppCompatActivity {
         String password = passwordInput.getText().toString();
         //if(!checkIfPasswordIsValid(password)) return;
         //if(!checkIfUsernameIsValid(login)) return;
-        authenticate(login, password);
+        if(authenticate(login, password)){
+            startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+        }
+        else{
+            Toast.makeText(this, "Wrong login and/or password", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
-    private void authenticate(String login, String password){
+    private boolean authenticate(String login, String password){
 
         UserEntity user = db.userDao().findByName(login);
         if(user != null){
             if(user.getPassword().equals(password)) {
-                SharedPreferences pref = getApplicationContext().getSharedPreferences("SessionData", 0);
+                SharedPreferences pref = getApplicationContext().getSharedPreferences("SessionData", Activity.MODE_PRIVATE);
                 SharedPreferences.Editor editor = pref.edit();
                 editor.putInt("UserId",user.getId());
-                editor.commit();
-
+                editor.apply();
+                return true;
             }
         }
 
-
+        return false;
     }
 
     private boolean checkIfUsernameIsValid(String username){

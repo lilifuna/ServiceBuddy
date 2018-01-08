@@ -28,10 +28,11 @@ public class MachineAdapter extends BaseAdapter {
     ArrayList<String> names;
 
 
-    public MachineAdapter(ArrayList<String> photosUrls, ArrayList<String> names){
+    public MachineAdapter(ArrayList<String> photosUrls, ArrayList<String> names, Context context){
         this.photosUrls = photosUrls;
         this.names = names;
-        context = AppSingleton.getInstance().getAppContext();
+        this.context = context;
+
     }
 
 

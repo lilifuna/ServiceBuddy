@@ -25,13 +25,16 @@
         <activity android:name=".Activities.AddMachine" />
         <activity
             android:name=".Activities.LoginActivity"
-            android:label="@string/title_activity_login">
-
-        </activity>
+            android:label="@string/title_activity_login"></activity>
         <activity android:name=".Activities.NewUserActivity" />
-        <activity android:name=".Activities.UserListActivity"
-            android:label="Users list"
-            >
+        <activity
+            android:name=".Activities.UserListActivity"
+            android:label="Users list">
+        </activity>
+        <activity
+            android:name=".Activities.MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
