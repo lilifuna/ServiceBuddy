@@ -27,11 +27,11 @@ public class MachineRepository {
 
     }
 
-    public LiveData<List<MachineEntity>> getMachineByName(String name){
+    public List<MachineEntity> getMachineByName(String name){
         return machineDao.getAllMachinesByName(name);
     }
 
-    public LiveData<List<MachineEntity>> getAllMachines(){
+    public List<MachineEntity> getAllMachines(){
         return machineDao.getAllMachines();
     }
 

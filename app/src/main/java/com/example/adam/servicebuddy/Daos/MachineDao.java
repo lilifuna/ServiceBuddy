@@ -33,9 +33,9 @@ public interface MachineDao {
             "JOIN machines ON machines.id = servicePoints.machineID")
     List<ServicePoint> getAllServicePoints(int machineID);*/
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
-    void insertAll(List<MachineEntity> machines);
+    //@Insert(onConflict = OnConflictStrategy.ABORT)
+    //void insertAll(List<MachineEntity> machines);
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    void insert(MachineEntity machine);
+    void insertAll(MachineEntity... machines);
 }

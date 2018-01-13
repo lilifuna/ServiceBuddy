@@ -15,38 +15,38 @@ public class UserEntity {
     private String login;
     private String password;
     private boolean isAdmin = false;
+    private String name;
 
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
     public int getId(){
         return id;
     }
-
     public void setId(int id){
         this.id = id;
     }
     public String getLogin(){
         return login;
     }
-
     public String getPassowrd(){
         return password;
     }
-
     public void setLogin(String login){
         this.login = login;
     }
-
     public String getPassword(){
         return password;
     }
-
     public void setPassword(String password){
         this.password = password;
     }
-
     public boolean getIsAdmin(){
         return isAdmin;
     }
-
     public void setIsAdmin(boolean admin){
         isAdmin = admin;
     }

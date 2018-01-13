@@ -1,4 +1,4 @@
-package com.example.adam.servicebuddy;
+package com.example.adam.servicebuddy.adapters;
 
 import android.content.Context;
 import android.media.Image;
@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cloudinary.Cloudinary;
+import com.example.adam.servicebuddy.R;
+import com.example.adam.servicebuddy.entities.MachineEntity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -25,10 +27,10 @@ import java.util.List;
 public class MachineAdapter extends BaseAdapter {
 
     Context context;
-    List<Machine> machines;
+    List<MachineEntity> machines;
 
 
-    public MachineAdapter(List<Machine> machines, Context context){
+    public MachineAdapter(List<MachineEntity> machines, Context context){
         this.machines = machines;
         this.context = context;
 

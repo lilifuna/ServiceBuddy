@@ -19,25 +19,27 @@ import com.example.adam.servicebuddy.ServicePoint;
 
 public class ServicePointEntity implements ServicePoint {
 
-    @PrimaryKey  public int pointId;
+
+
+    @PrimaryKey (autoGenerate = true) public int id;
     public String name;
     public int machineID;
+    int interval;                   //interval in hours of operation
 
+    public int getId() {return id;}
+    public void setId(int id) {this.id = id;}
+    public int getMachineID() {return machineID;}
+    public void setMachineID(int machineID) {this.machineID = machineID;}
     public void setName(String name) {
         this.name = name;
     }
-
     public void setInterval(int interval) {
         this.interval = interval;
     }
-
-    int interval;                   //interval in hours of operation
-
     @Override
     public String getName() {
         return name;
     }
-
     @Override
     public int getInterval() {
         return interval;

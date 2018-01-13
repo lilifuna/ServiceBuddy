@@ -35,12 +35,12 @@ public class MenuActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-        if(appSingleton.getLoggedUserId() != 0){
+        //if(appSingleton.getLoggedUserId() != 0){
             transaction.replace(R.id.menuContainer, fragmentMenu);
-        }
-        else{
-            transaction.replace(R.id.menuContainer, fragmentInavailable);
-        }
+       // }
+       // else{
+          //  transaction.replace(R.id.menuContainer, fragmentInavailable);
+       // }
 
         transaction.commit();
     }

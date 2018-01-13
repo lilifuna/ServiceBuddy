@@ -25,7 +25,7 @@ public class MenuActivityFragment extends Fragment {
 
     @OnClick(R.id.machineListBtn)
     public void startMachineListActivity(){
-       startActivity(new Intent(getActivity(), MachinesView.class));
+       startActivity(new Intent(getActivity(), MachinesViewActivity.class));
     }
 
     @OnClick(R.id.userListBtn)

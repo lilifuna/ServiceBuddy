@@ -25,6 +25,9 @@ public interface UserDao {
     @Query("SELECT * FROM Users")
     List<UserEntity> getAllUsers();
 
+    @Query("SELECT * FROM Users WHERE :idU = id")
+    UserEntity findById(int idU);
+
     //@Query("SELECT * FROM Users WHERE :uid = id")
    // UserEntity getUserById(int uid);
 

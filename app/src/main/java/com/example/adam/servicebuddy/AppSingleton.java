@@ -7,7 +7,10 @@ import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
 
 import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -38,6 +41,9 @@ public class AppSingleton  {
         config.put("api_secret", "NoAKQ0DtaGSd4ePjDffEUnge7eg");
         cloud = new Cloudinary(config);
     }
+
+
+
 
     private AppSingleton(){
 
