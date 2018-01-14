@@ -23,11 +23,6 @@ public class MachineEntity implements Machine {
     public String make;
     public int productionDate;
 
-    //@Relation (parentColumn = "id", entityColumn = "machineID")
-    //public List<ServicePointEntity> servicePoints;
-
-
-
 
     public String photoUrl;
 

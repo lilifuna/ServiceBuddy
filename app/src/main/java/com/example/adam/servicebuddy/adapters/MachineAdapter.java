@@ -59,6 +59,13 @@ public class MachineAdapter extends BaseAdapter {
         View rowView = inflater.inflate(R.layout.machine_list_row, parent, false);
         TextView textView = (TextView) rowView.findViewById(R.id.machine_name);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.list_row_machine_photo);
+        TextView prodDateTextView = (TextView) rowView.findViewById(R.id.prodDateTextView);
+        TextView odometerTextView = (TextView) rowView.findViewById(R.id.machineOdometerTextView);
+        TextView brandTextView = (TextView) rowView.findViewById(R.id.machineBrandTextView);
+        TextView modelTextView = (TextView) rowView.findViewById(R.id.machineModelTextView);
+
+        prodDateTextView.setText(machines.get(position).getProductionDate());
+        odometerTextView.setText(machines.get(position).);
         textView.setText(machines.get(position).getName());
         Picasso.with(context).load("https://st.mascus.com/imagetilewm/product/dd8a7989/manitou-mlt-627-t-turbo-4x4x4,3e1164d1.jpg").into(imageView);
 

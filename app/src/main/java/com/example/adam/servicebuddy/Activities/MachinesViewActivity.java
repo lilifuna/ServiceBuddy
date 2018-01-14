@@ -51,6 +51,7 @@ public class MachinesViewActivity extends AppCompatActivity {
         AppDatabase db = AppDatabase.getAppDatabase(getApplicationContext());
         MachineAdapter adapter = new MachineAdapter(db.machineDao().getAllMachines(), getApplicationContext());
         machinesList.setAdapter(adapter);
+
         registerForContextMenu(machinesList);
 
     }
@@ -82,6 +83,29 @@ public class MachinesViewActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_machines_view, menu);
         return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.action_filter:
+
+                return true;
+
+            case R.id.action_sort:
+
+
+                return true;
+
+            case R.id.action_settings:
+
+
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {

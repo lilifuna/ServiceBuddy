@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,14 +10,72 @@
         <ImageView
             android:id="@+id/list_row_machine_photo"
             android:layout_width="@dimen/listViewPhotoSizeWidth"
-            android:layout_height="@dimen/listViewPhotoSizeHeight" />
+            android:layout_height="@dimen/listViewPhotoSizeHeight"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="-4dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
 
         <TextView
             android:id="@+id/machine_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:text="Text"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toRightOf="@+id/list_row_machine_photo"
+            app:layout_constraintTop_toTopOf="@+id/list_row_machine_photo" />
+
+        <TextView
+            android:id="@+id/prodDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="33dp"
+            android:layout_marginRight="-8dp"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/machineOdometerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="11dp"
+            android:text="TextView"
+            app:layout_constraintRight_toLeftOf="@+id/textView21"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mth"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="0dp"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/machineBrandTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp"
+            app:layout_constraintLeft_toRightOf="@+id/machine_name"
+            android:layout_marginLeft="44dp" />
+
+        <TextView
+            android:id="@+id/machineModelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp"
+            app:layout_constraintLeft_toRightOf="@+id/machineBrandTextView"
+            android:layout_marginLeft="12dp" />
 
 
-
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

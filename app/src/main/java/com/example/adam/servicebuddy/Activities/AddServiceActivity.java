@@ -6,7 +6,7 @@ import android.widget.ListView;
 
 import com.example.adam.servicebuddy.AppDatabase;
 import com.example.adam.servicebuddy.R;
-import com.example.adam.servicebuddy.adapters.ServicePointAddAdapter;
+import com.example.adam.servicebuddy.adapters.PointServicedAdapter;
 import com.example.adam.servicebuddy.entities.ServicePointEntity;
 
 import java.util.List;
@@ -23,11 +23,11 @@ public class AddServiceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_service);
         ButterKnife.bind(this);
-        ServicePointAddAdapter adapter;
+        PointServicedAdapter adapter;
 
         AppDatabase db = AppDatabase.getAppDatabase(this);
         List<ServicePointEntity> availableServicePoints = db.servicePointDao().getServicePointsOfMachine(getIntent().getIntExtra("machineID", 0));
-        adapter = new ServicePointAddAdapter(availableServicePoints, this);
+        adapter = new PointServicedAdapter(availableServicePoints, this);
         availablePointsListView.setAdapter(adapter);
 
     }

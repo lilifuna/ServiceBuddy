@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/activity_add_machine_layout"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.adam.servicebuddy.Activities.AddMachineActivity">
 
@@ -148,17 +149,6 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginEnd="16dp" />
 
-    <ListView
-        android:layout_width="368dp"
-        android:layout_height="168dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/odometerInput"
-        tools:layout_editor_absoluteY="265dp"
-        tools:layout_editor_absoluteX="6dp"
-        android:id="@+id/machineServicePointsToAddListView" />
-
     <Button
         android:id="@+id/customServicePointButton"
         android:layout_width="wrap_content"
@@ -168,4 +158,13 @@
         android:text="Add custom point"
         app:layout_constraintLeft_toLeftOf="@+id/machineServicePointsToAddListView"
         app:layout_constraintTop_toBottomOf="@+id/machineServicePointsToAddListView" />
+
+    <ListView
+        android:id="@+id/machineServicePointsToAddListView"
+        android:layout_width="368dp"
+        android:layout_height="168dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/odometerInput" />
 </android.support.constraint.ConstraintLayout>

@@ -14,6 +14,28 @@
     <string name="air_filter">Air filter</string>
     <string name="title_activity_login">Sign in</string>
 
+
+    <string-array name="default_service_points">
+        <item>Engine oil filter</item>
+        <item>Engine oil</item>
+        <item>Transmission oil</item>
+        <item>Transmission oil filter</item>
+        <item>Engine air filter</item>
+        <item>Cab air filter</item>
+        <item>Coolant fluid</item>
+        <item>Fuel filter(s)</item>
+        <item>Hydraulic oil filter(s)</item>
+        <item>Hydraulic oil</item>
+        <item>Wiper blades</item>
+        <item>Front tires</item>
+        <item>Rear tires</item>
+        <item>Differential oil - front</item>
+        <item>Differential oil - rear</item>
+        <item>Transfer case oil</item>
+        <item>Grease</item>
+    </string-array>
+
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
