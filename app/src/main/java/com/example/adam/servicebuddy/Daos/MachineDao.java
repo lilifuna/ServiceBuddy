@@ -29,6 +29,8 @@ public interface MachineDao {
     @Query("SELECT * FROM machines WHERE :mId = id")
     MachineEntity getMachineById(int mId);
 
+
+
   /*  @Query("SELECT servicePoints.name FROM servicePoints " +
             "JOIN machines ON machines.id = servicePoints.machineID")
     List<ServicePoint> getAllServicePoints(int machineID);*/
@@ -37,5 +39,5 @@ public interface MachineDao {
     //void insertAll(List<MachineEntity> machines);
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    void insertAll(MachineEntity... machines);
+    List<Long> insertAll(MachineEntity... machines);
 }

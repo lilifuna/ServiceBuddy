@@ -15,6 +15,7 @@ import com.example.adam.servicebuddy.Daos.ServicePointDao;
 import com.example.adam.servicebuddy.Daos.UserDao;
 import com.example.adam.servicebuddy.entities.MachineEntity;
 import com.example.adam.servicebuddy.entities.OdometerReadingEntity;
+import com.example.adam.servicebuddy.entities.PointServicedEntity;
 import com.example.adam.servicebuddy.entities.RepairEntity;
 import com.example.adam.servicebuddy.entities.ServicePointEntity;
 import com.example.adam.servicebuddy.entities.UserEntity;
@@ -22,7 +23,7 @@ import com.example.adam.servicebuddy.entities.UserEntity;
 /**
  * Created by Adam on 2017-11-20.
  */
-@Database (entities = {MachineEntity.class, OdometerReadingEntity.class RepairEntity.class, ServicePointEntity.class, UserEntity.class}, version = 4, exportSchema = false)
+@Database (entities = {MachineEntity.class, OdometerReadingEntity.class, PointServicedEntity.class, RepairEntity.class, ServicePointEntity.class, UserEntity.class}, version = 15, exportSchema = false)
 @android.arch.persistence.room.TypeConverters({TypeConverters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -35,6 +36,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract ServicePointDao servicePointDao();
     public abstract UserDao userDao();
     public abstract OdometerReadingDao odometerReadingDao();
+
 
 
     private final MutableLiveData<Boolean> isDatabaseCreated = new MutableLiveData<>();

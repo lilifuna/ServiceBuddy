@@ -21,6 +21,7 @@ public class MachineEntity implements Machine {
     @PrimaryKey(autoGenerate = true) public int id;
     public String name;
     public String make;
+    public String model;
     public int productionDate;
 
 
@@ -47,7 +48,8 @@ public class MachineEntity implements Machine {
     }
 
 
-
+    public String getModel() {return model;}
+    public void setModel(String model) {this.model = model;}
     @Override
     public int getId(){
         return id;

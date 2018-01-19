@@ -3,12 +3,10 @@ package com.example.adam.servicebuddy.entities;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
-import android.arch.persistence.room.Relation;
 
 import com.example.adam.servicebuddy.Repair;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by Adam on 2017-11-20.
@@ -18,7 +16,7 @@ import java.util.List;
 @Entity (tableName = "repairs")
 public class RepairEntity implements Repair {
 
-    @PrimaryKey public int id;
+    @PrimaryKey(autoGenerate = true) public int id;
 
     @ForeignKey(entity = UserEntity.class, parentColumns = "id", childColumns = "operatorId")
         public int operatorId;
@@ -26,7 +24,8 @@ public class RepairEntity implements Repair {
     @ForeignKey(entity = MachineEntity.class, parentColumns = "id", childColumns = "machineId")
         public int machineID;
     public Date repairDate;
-    public int odometer;
+
+    public int odometerReadingId;
 
 
     @Override
@@ -56,11 +55,11 @@ public class RepairEntity implements Repair {
     public void setRepairDate(Date repairDate) {
         this.repairDate = repairDate;
     }
-    public int getOdometer() {
-        return odometer;
+    public int getOdometerReadingId() {
+        return odometerReadingId;
     }
-    public void setOdometer(int odometer) {
-        this.odometer = odometer;
+    public void setOdometerReadingId(int odometerReadingId) {
+        this.odometerReadingId = odometerReadingId;
     }
 
 

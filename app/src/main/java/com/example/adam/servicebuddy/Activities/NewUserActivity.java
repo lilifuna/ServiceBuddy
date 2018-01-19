@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.example.adam.servicebuddy.AppDatabase;
 import com.example.adam.servicebuddy.R;
@@ -20,7 +21,7 @@ public class NewUserActivity extends AppCompatActivity {
     EditText loginInput;
 
     @BindView(R.id.newUserPasswordInput) EditText passwordInput;
-
+    @BindView(R.id.newUserNameEditText) EditText nameInput;
     @BindView(R.id.adminSwitch)
     Switch adminSwitch;
 
@@ -42,14 +43,19 @@ public class NewUserActivity extends AppCompatActivity {
         UserEntity newUser = new UserEntity();
         String login = loginInput.getText().toString();
         String password = passwordInput.getText().toString();
+        String name = nameInput.getText().toString();
         boolean isAdmin = adminSwitch.isChecked();
 
-        if(login.length()>=0 && password.length() >= 5){
+        if(login.length()>=0 && password.length() >= 5 && name.length() >= 0){
             newUser.setLogin(login);
             newUser.setPassword(password);
             newUser.setIsAdmin(isAdmin);
+            newUser.setName(name);
             db.userDao().insertAll(newUser);
             startActivity(new Intent(NewUserActivity.this, UserListActivity.class));
+        }
+        else{
+            Toast.makeText(this, "Login, password or name too short!", Toast.LENGTH_SHORT).show();
         }
 
     }

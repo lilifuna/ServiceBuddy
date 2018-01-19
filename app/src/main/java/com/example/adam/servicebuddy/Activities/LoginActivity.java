@@ -36,7 +36,8 @@ public class LoginActivity extends AppCompatActivity {
         //TEST DATA
         user1.setLogin("lilifuna");
         user1.setPassword("a11234");
-        user1.setIsAdmin(false);
+        user1.setIsAdmin(true);
+        user1.setName("Adam Kokot");
         db.userDao().insertAll(user1);
     }
 

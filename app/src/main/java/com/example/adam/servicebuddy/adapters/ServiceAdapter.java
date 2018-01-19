@@ -15,6 +15,8 @@ import com.example.adam.servicebuddy.entities.RepairEntity;
 import com.example.adam.servicebuddy.entities.ServicePointEntity;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -56,7 +58,9 @@ public class ServiceAdapter extends BaseAdapter {
         View rowView = inflater.inflate(R.layout.service_list_row, parent, false);
         TextView serviceDate = (TextView) rowView.findViewById(R.id.serviceDateTextBox);
         TextView operatorNameTextView = (TextView) rowView.findViewById(R.id.operatorNameTextBox);
-        serviceDate.setText(repairs.get(position).getRepairDate().toString());
+        Date rawDate = repairs.get(position).getRepairDate();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm dd.MM.yyyy");
+        serviceDate.setText(dateFormat.format(rawDate));
         String operatorName = db.userDao().findById(repairs.get(position).getOperatorId()).getName();
         operatorNameTextView.setText(operatorName);
 

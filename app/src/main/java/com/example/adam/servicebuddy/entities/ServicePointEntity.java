@@ -12,10 +12,7 @@ import com.example.adam.servicebuddy.ServicePoint;
  */
 
 
-@Entity(tableName = "servicePoints"
-        ,foreignKeys = @ForeignKey(entity = MachineEntity.class,
-                                    parentColumns = "id",
-                                    childColumns = "machineID"))
+@Entity(tableName = "servicePoints")
 
 public class ServicePointEntity implements ServicePoint {
 

@@ -2,6 +2,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/machinesView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.adam.servicebuddy.Activities.MachinesViewActivity">
@@ -30,6 +31,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:elevation="10dp"
+        app:elevation="1dp"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
 </android.support.design.widget.CoordinatorLayout>

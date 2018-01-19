@@ -30,7 +30,7 @@
 
         <activity
             android:name=".Activities.MachinesViewActivity"
-            android:label="@string/app_name"
+            android:label="View machines"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.AddMachineActivity" />
         <activity
@@ -42,7 +42,7 @@
             android:label="Users list" />
         <activity
             android:name=".Activities.MenuActivity"
-            android:label="@string/title_activity_menu"
+            android:label="Menu"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,9 +50,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.MachineDetailsActivity" />
-        <activity android:name=".Activities.RepairDetailsActivity" />
-        <activity android:name=".Activities.AddServiceActivity"></activity>
+        <activity android:name=".Activities.MachineDetailsActivity"
+                    android:label="Machine details"/>
+        <activity android:name=".Activities.RepairDetailsActivity"
+                    android:label="Service details"/>
+        <activity android:name=".Activities.AddServiceActivity"
+                    android:label="Add new service"></activity>
     </application>
 
 </manifest>

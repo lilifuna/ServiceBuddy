@@ -54,7 +54,9 @@ public class AppSingleton  {
         cloudinaryInitialization();
         SharedPreferences pref = context.getSharedPreferences("SessionData", Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-        editor.putInt("UserId",0);
+
+        if(BuildConfig.DEBUG) editor.putInt("UserId",1);
+        else  editor.putInt("UserId",-1);
         editor.apply();
     }
 
@@ -67,7 +69,7 @@ public class AppSingleton  {
     public void logOut(){
         SharedPreferences pref = context.getSharedPreferences("SessionData", Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-        editor.putInt("UserId",0);
+        editor.putInt("UserId",-1);
         editor.apply();
     }
 

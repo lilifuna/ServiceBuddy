@@ -11,8 +11,12 @@ import java.util.Date;
 @Entity(tableName = "odometerReadings")
 public class OdometerReadingEntity {
 
-    @PrimaryKey int id;
+    @PrimaryKey (autoGenerate = true) public int id;
     int machineID;
+
+    int odometerReading;
+    Date readingTime;
+
 
     public Date getReadingTime() {
         return readingTime;
@@ -21,8 +25,6 @@ public class OdometerReadingEntity {
     public void setReadingTime(Date readingTime) {
         this.readingTime = readingTime;
     }
-
-    Date readingTime;
 
     public int getMachineID() {
         return machineID;
@@ -40,6 +42,6 @@ public class OdometerReadingEntity {
         this.odometerReading = odometerReading;
     }
 
-    int odometerReading;
+
 
 }

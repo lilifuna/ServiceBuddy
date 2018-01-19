@@ -9,6 +9,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,7 @@ import com.example.adam.servicebuddy.R;
 import com.example.adam.servicebuddy.adapters.PointServicedAdapter;
 import com.example.adam.servicebuddy.adapters.ServicePointAddAdapter;
 import com.example.adam.servicebuddy.entities.MachineEntity;
+import com.example.adam.servicebuddy.entities.OdometerReadingEntity;
 import com.example.adam.servicebuddy.entities.ServicePointEntity;
 import com.squareup.picasso.Picasso;
 
@@ -72,12 +74,11 @@ public class AddMachineActivity extends AppCompatActivity {
 
         String[] defaultServicePoints = getResources().getStringArray(R.array.default_service_points);
         servicePoints.addAll(Arrays.asList(defaultServicePoints));
-
         adapter = new ServicePointAddAdapter(servicePoints, this);
         servicePointsListView.setAdapter(adapter);
-
-
     }
+
+
 
 
 
@@ -169,41 +170,46 @@ public class AddMachineActivity extends AppCompatActivity {
     @OnClick(R.id.submitBtn)
     public void submitMachine(){
         MachineEntity machine;
-        boolean obligatoryNotFilled = false;
-        if(machineMakeInput != null) {
-            //temp.setMake(machineMakeInput.getText().toString());
-        }
-        else return;
 
-        if(machineNameInput != null){
-            //temp.setMake(machineNameInput.getText().toString());
-        }
-        else return;
-
-        if(productionYearInput != null){
-           // temp.setProductionYear(productionYearInput.getText().toString());
-        }
-        else return;
-
-        if(modelNameInput != null){
-            //temp.setModel(modelNameInput.getText().toString());
-        }
-        else return;
-
-
-        if(odometerInput != null){
-            //temp.setOdometer(new Date(), Integer.parseInt(odometerInput.getText().toString()));
-        }
-        else return;
+        if (validateInput()) return;
 
         AppDatabase db = AppDatabase.getAppDatabase(getApplicationContext());
-        machine = new MachineEntity(machineNameInput.getText().toString(), machineMakeInput.getText().toString(), Integer.parseInt(productionYearInput.getText().toString()));
-        db.machineDao().insertAll(machine);
-        int machineId = machine.getId();
+        String machineName = machineNameInput.getText().toString();
+        String machineModel = modelNameInput.getText().toString();
+        String machineBrand = machineMakeInput.getText().toString();
+        Integer odometer = Integer.parseInt(odometerInput.getText().toString());
+        int prodYear = Integer.parseInt(productionYearInput.getText().toString());
+
+        machine = new MachineEntity();
+        machine.setName(machineName);
+        machine.setMake(machineBrand);
+        machine.setProductionDate(prodYear);
+        machine.setModel(machineModel);
+        int machineId = db.machineDao().insertAll(machine).get(0).intValue();
+
+
+        OdometerReadingEntity odometerReadingEntity = new OdometerReadingEntity();
+        odometerReadingEntity.setMachineID(machineId);
+        odometerReadingEntity.setOdometerReading(odometer);
+        odometerReadingEntity.setReadingTime(new Date());
+        db.odometerReadingDao().insertAll(odometerReadingEntity);
+
+
         ServicePointEntity[] entitiesToAdd = adapter.getEntitiesToCreate(machineId);
         db.servicePointDao().insertAll(entitiesToAdd);
 
         finish();
+    }
+
+    private boolean validateInput() {
+        if(machineMakeInput.getText().length() <= 0) return true;
+        if(machineNameInput.getText().length() <= 0) return true;
+        if(productionYearInput.getText().length() <= 0 || !TextUtils.isDigitsOnly(productionYearInput.getText().toString())) {
+            if(Integer.parseInt(productionYearInput.getText().toString()) > new Date().getYear() || Integer.parseInt(productionYearInput.getText().toString()) <= 0) return true;
+        }
+        if(modelNameInput.getText().length() <= 0) return true;
+        if(odometerInput.getText().length() <= 0 || !TextUtils.isDigitsOnly(productionYearInput.getText().toString())) return true;
+        return false;
     }
 
 }

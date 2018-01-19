@@ -7,6 +7,7 @@ import android.arch.persistence.room.Query;
 
 import com.example.adam.servicebuddy.entities.OdometerReadingEntity;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,10 +20,14 @@ public interface OdometerReadingDao {
     @Query("SELECT * FROM odometerReadings WHERE :mId = machineID")
     public List<OdometerReadingEntity> getAllMachineOdometerReadings(int mId);
 
-    @Query("SELECT odometerReading FROM odometerReadings WHERE :mID = machineID SORT BY")
+    @Query("SELECT * FROM odometerReadings WHERE :mId = machineID ORDER BY readingTime DESC LIMIT 1") // ???
+    public OdometerReadingEntity getMostRecentOdometerReading(int mId);
+
+    @Query("SELECT * FROM odometerReadings JOIN repairs ON odometerReadings.id = repairs.odometerReadingId WHERE :repairId = repairs.id")
+    public OdometerReadingEntity getOdometerReadingAtTimeOfRepair(int repairId);
 
     @Insert
-    public void insertAll(OdometerReadingEntity... odometerReadingEntities);
+    public List<Long> insertAll(OdometerReadingEntity... odometerReadingEntities);
 
     @Delete
     public void deleteAll(OdometerReadingEntity... odometerReadingEntities);

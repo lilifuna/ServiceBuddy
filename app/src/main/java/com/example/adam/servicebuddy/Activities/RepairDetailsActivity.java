@@ -32,10 +32,12 @@ public class RepairDetailsActivity extends AppCompatActivity {
         RepairEntity repairEntity = db.repairDao().findById(repairId);
 
         PointsServiced servicePoints = db.repairDao().getPointsServiced(repairId);
-        ArrayList<String> points = new ArrayList<>();
-        for(ServicePointEntity point : servicePoints.servicedPoints){
-            points.add(point.getName());
-        }
+        final ArrayList<String> points = new ArrayList<>();
+      //  for(ServicePointEntity point : servicePoints.servicedPoints){
+          //  points.add(point.getName());
+       // }
+        servicePoints.servicedPoints.stream().forEach(s -> points.add(s.getName()));
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, points);
         servicedPointsList.setAdapter(adapter);
     }

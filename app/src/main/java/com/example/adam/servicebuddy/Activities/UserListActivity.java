@@ -109,10 +109,10 @@ public class UserListActivity extends AppCompatActivity {
 
             UserEntity currentListData = (UserEntity) getItem(position);
 
-            mViewHolder.nameTextView.setText(currentListData.getLogin());
-            Picasso.with(context).load("https://i.pinimg.com/736x/f4/bf/92/f4bf92d41c99d853914f703e968647cd--emoji-faces-eyes-emoji.jpg")
-                    .into(mViewHolder.photoImageView);
-
+            mViewHolder.usernameTextView.setText(currentListData.getLogin());
+            mViewHolder.nameTextView.setText(currentListData.getName());
+            mViewHolder.passwordTextView.setText(currentListData.getPassowrd());
+            Picasso.with(context).load("https://i.pinimg.com/736x/f4/bf/92/f4bf92d41c99d853914f703e968647cd--emoji-faces-eyes-emoji.jpg").into(mViewHolder.photoImageView);
 
             return convertView;
         }
@@ -120,13 +120,16 @@ public class UserListActivity extends AppCompatActivity {
 
     }
     private class MyViewHolder {
-        TextView nameTextView;
+        TextView usernameTextView;
         ImageView photoImageView;
-
+        TextView passwordTextView;
+        TextView nameTextView;
 
         public MyViewHolder(View item) {
-            nameTextView = (TextView) item.findViewById(R.id.username);
+            usernameTextView = (TextView) item.findViewById(R.id.usernameTextView);
             photoImageView = (ImageView) item.findViewById(R.id.userPhoto);
+            passwordTextView = (TextView) item.findViewById(R.id.passwordTextView);
+            nameTextView = (TextView) item.findViewById(R.id.nameTextView);
 
         }
     }
